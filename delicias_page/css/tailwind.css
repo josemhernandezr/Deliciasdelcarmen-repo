@@ -45,25 +45,6 @@ main{
 .submenulinkicono{
     @apply bg-red-600 text-white rounded-lg p-3;
 }
-/*---------- CARRUSEL----------------*/
-.sliders-container{
-    @apply bg-cover bg-center shadow-lg;
-}
-.slider{
-    @apply container mx-auto px-6 md:px-20 py-6;
-}
-.h2-carousel{
-    @apply text-5xl text-white leading-tight;
-}
-.h3-carousel{
-    @apply font-bold text-white leading-tight text-6xl;
-}
-.p-carousel{
-    @apply text-xl text-white mt-10 font-light;
-}
-.btn-carousel{
-    @apply bg-red-700 text-white ease-linear hover:bg-white hover:text-red-700 px-6 py-4 rounded-full;
-}
 /*--------------- MISION Y VISION --------------------------*/
 .mvcard{
     @apply mx-auto p-5 sm:p-10 text-center text-white;
@@ -78,15 +59,14 @@ main{
     @apply text-base;
 }
 /*--------- DESC. INICIAL, CHICHARRONES, COMENTARIOS-----------*/
-/*Descripcion inicial*/
 .contenedortotal1{
     @apply  text-center py-16 bg-red-800 text-white;
 }
 .tituloh1{
-    @apply text-4xl  font-bold leading-tight mb-5 capitalize;
+    @apply text-4xl font-bold leading-tight mb-5;
 }
 .contenedorimg{
-    @apply lg:w-5/12 order-2;
+    @apply lg:w-5/12;
 }
 .contenedorinfo{
     @apply lg:flex justify-between items-center;
@@ -101,7 +81,7 @@ main{
     @apply  text-center py-16  bg-white text-red-800;
 }
 .botonesinfo{
-    @apply text-white rounded-full border-transparent shadow-md py-2 px-5 text-base bg-yellow-400 hover:bg-white hover:text-yellow-500 inline-block border;
+    @apply text-white rounded-full border-transparent shadow-md py-2 px-5 text-base bg-yellow-500 hover:bg-white hover:text-yellow-500 inline-block border;
 }
 .parrafoinfo{
     @apply text-sm text-gray-600 text-center px-5;
@@ -111,10 +91,10 @@ main{
     @apply w-full h-full text-center items-center p-4 transform  hover:scale-105 transition duration-300;
 }
 .icono{
-    @apply  w-28 h-28 box-border border-4 inline-block mb-4 p-4 rounded-xl transform rotate-45 border-yellow-400 ;
+    @apply  w-28 h-28 box-border border-4 inline-block mb-4 p-4 rounded-xl transform rotate-45 border-yellow-500 ;
 }
 .material-icons{
-    @apply text-red-600 transform -rotate-45;
+    @apply text-red-700 transform -rotate-45;
 }
 .infoservices{
     @apply px-10 py-6 mb-10 text-center;
@@ -160,6 +140,68 @@ main{
 }
 .serviciodescrip div div p{
     @apply text-lg;
+}
+/*-------- PRODUCTOS ---------------*/
+.product-content-title{
+    @apply pt-20 pb-10 text-center;
+}
+.product-title{
+    @apply text-2xl underline font-semibold md:text-4xl text-yellow-500;
+}
+.product-content-card{
+    @apply bg-white lg:py-12 lg:flex lg:justify-center;
+}
+.product-card{
+    @apply bg-white w-full lg:mx-8 lg:flex lg:rounded-lg;
+}
+.product-card-img{
+    @apply h-64 bg-contain bg-no-repeat bg-center lg:h-full;
+}
+.product-card-info{
+    @apply py-12 px-6 w-full lg:w-1/2 mx-auto;  
+}
+.product-card-h2{
+    @apply text-3xl text-gray-800 font-bold;
+}
+.product-card-p{
+    @apply mt-4 text-gray-600;
+}
+.product-card-btn{
+    @apply bg-red-800 text-gray-100 px-5 py-3 font-semibold rounded;
+}
+/*---------- COMENTARIOS ----------*/
+.contenedorcomentarios{
+    @apply  bg-red-800 w-full m-0 justify-center flex flex-col md:flex-row shadow-sm overflow-hidden;
+}
+.comentariototal{
+    max-width: 500px;
+    @apply w-full mx-auto my-5 rounded-lg bg-white shadow-lg pt-5 pb-10 text-gray-800;
+}
+.contenedorboton{
+    @apply flex my-4 justify-center items-center;
+}
+
+.botoncomentario1{
+    @apply text-center font-bold  inline-block rounded-full mx-2 focus:outline-none focus:ring;
+}
+.subbotoncomentario{
+    @apply h-12 w-12 opacity-25 bg-yellow-300 text-black;
+}
+.subbotoncomentario2{
+    @apply h-16 w-16 opacity-100 bg-yellow-400 text-red-800;
+}
+.p{
+    @apply text-red-800 font-normal italic px-6 py-6 text-sm ;
+}
+.contenedoruser{
+    @apply flex justify-center px-6 pt-2 pb-6 ;
+}
+.h2{
+    @apply text-sm md:text-sm font-bold text-red-800 leading-tight;
+}
+.user{
+    @apply text-red-800 text-xs md:text-sm truncate;
+   
 }
 /*------- FOOTER ------------*/
 .submenuitem{
