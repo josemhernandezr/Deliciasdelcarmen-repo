@@ -21,7 +21,7 @@ main{
     -moz-transition: all .5s ease;
     -ms-transition: all .5s ease;
     -o-transition: all .5s ease;
-    @apply px-4 py-2 mt-2 text-sm font-semibold text-center md:mt-0 md:ml-4 hover:text-white focus:text-white focus:outline-none focus:ring;
+    @apply px-4 py-2 mt-2 text-sm font-semibold text-center md:mt-0 md:ml-4 hover:text-white focus:outline-none focus:ring;
 }
 .navlink:hover{
     color: var(--main-color);
@@ -33,7 +33,6 @@ main{
     -o-transition: all .5s;
 }
 .navactive{
-    @apply text-white;
     color: var(--main-color);
     background-size: 100% 3px;
 }
@@ -41,9 +40,148 @@ main{
     @apply flex flex-row justify-center text-gray-900 bg-red-200 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-red-100 focus:bg-red-100 focus:outline-none focus:ring;
 }
 .submenulink{
-    @apply flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:ring;
+    @apply flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-red-200 focus:bg-red-200 focus:outline-none focus:ring;
 }
 .submenulinkicono{
-    @apply bg-red-500 text-white rounded-lg p-3;
+    @apply bg-red-600 text-white rounded-lg p-3;
+}
+/*---------- CARRUSEL----------------*/
+.sliders-container{
+    @apply bg-cover bg-center shadow-lg;
+}
+.slider{
+    @apply container mx-auto px-6 md:px-20 py-6;
+}
+.h2-carousel{
+    @apply text-5xl text-white leading-tight;
+}
+.h3-carousel{
+    @apply font-bold text-white leading-tight text-6xl;
+}
+.p-carousel{
+    @apply text-xl text-white mt-10 font-light;
+}
+.btn-carousel{
+    @apply bg-red-700 text-white ease-linear hover:bg-white hover:text-red-700 px-6 py-4 rounded-full;
+}
+/*--------------- MISION Y VISION --------------------------*/
+.mvcard{
+    @apply mx-auto p-5 sm:p-10 text-center text-white;
+}
+.mvcardcont{
+    @apply h-full py-16 max-w-sm rounded overflow-hidden shadow-lg  bg-yellow-500;
+}
+.mvcardtitle{
+    @apply font-bold text-xl mb-2;
+}
+.mvcardtext{
+    @apply text-base;
+}
+/*--------- DESC. INICIAL, CHICHARRONES, COMENTARIOS-----------*/
+/*Descripcion inicial*/
+.contenedortotal1{
+    @apply  text-center py-16 bg-red-800 text-white;
+}
+.tituloh1{
+    @apply text-4xl  font-bold leading-tight mb-5 capitalize;
+}
+.contenedorimg{
+    @apply lg:w-5/12 order-2;
+}
+.contenedorinfo{
+    @apply lg:flex justify-between items-center;
+}
+.subcontenedorinfo{
+    @apply lg:w-6/12 lg:p-0 p-7;
+}
+.imagen{
+    transform: scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg);
+}
+.contenedortotal2{
+    @apply  text-center py-16  bg-white text-red-800;
+}
+.botonesinfo{
+    @apply text-white rounded-full border-transparent shadow-md py-2 px-5 text-base bg-yellow-400 hover:bg-white hover:text-yellow-500 inline-block border;
+}
+.parrafoinfo{
+    @apply text-sm text-gray-600 text-center px-5;
+}
+/*-------------- SERVICIOS Y MAPA -----------------------*/
+.card {
+    @apply w-full h-full text-center items-center p-4 transform  hover:scale-105 transition duration-300;
+}
+.icono{
+    @apply  w-28 h-28 box-border border-4 inline-block mb-4 p-4 rounded-xl transform rotate-45 border-yellow-400 ;
+}
+.material-icons{
+    @apply text-red-600 transform -rotate-45;
+}
+.infoservices{
+    @apply px-10 py-6 mb-10 text-center;
+}
+.subtitulo{
+    @apply font-bold text-xl mb-4;
+}
+.parrafo{
+    @apply text-base;
+}
+.content-whatsapp{
+    @apply block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110;
+}
+.icono-whatsapp{
+    color: #28a745;
+    @apply object-cover bg-white object-center w-full h-full rounded-full;
+}
+.icono-whatsapp:hover{
+    color:white;
+    background-color: #28a745;
+}
+/*---- SERVICIOS ----*/
+.serviciocontenedor{
+  @apply grid sm:grid-cols-1  md:grid-cols-1 lg:grid-cols-2 bg-white;
+}
+.servicioimagenes{
+    @apply grid grid-cols-1 md:grid-cols-2 m-3 md:m-10 gap-7 p-3 md:p-8;
+}
+.servicioimagenes div{
+    @apply w-full;
+}
+.servicioimagenes div img{
+    @apply w-64 h-auto mx-auto;
+}
+.serviciodescrip{
+    @apply text-center rounded-2xl px-10 mx-0 md:mx-10 my-10;
+}
+.serviciodescrip svg{
+    @apply inline-block h-24 w-24 text-red-600;
+}
+.serviciodescrip div div div h2{
+    @apply font-bold text-3xl mb-2;
+}
+.serviciodescrip div div p{
+    @apply text-lg;
+}
+/*------- FOOTER ------------*/
+.submenuitem{
+    @apply w-60 h-60 mx-auto my-3 rounded-sm overflow-hidden relative transform hover:scale-105 transition-all duration-700 box-border;
+}
+.submenuitem a img{
+    @apply w-full h-full object-cover object-center absolute z-0;
+}
+
+.footer{
+    @apply bg-gray-100 pt-10 sm:mt-10 border-t border-red-600;
+}
+.footer2{
+    @apply max-w-6xl m-auto text-gray-800 flex flex-wrap;
+}
+.linksfooter{
+    @apply my-3 block text-gray-700 hover:text-red-700 text-sm font-medium duration-700 overflow-hidden;
+}
+.iconfooter{
+    @apply w-6 mx-1;
+}
+.sv{
+    @apply h-6 w-6 text-red-500 hover:text-yellow-500;
 }
 @tailwind utilities;
