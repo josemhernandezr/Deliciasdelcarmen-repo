@@ -11,9 +11,6 @@
 main{
     padding-top: 82px;
 }
-.antialiased{
-    z-index: 1000;
-}
 .navlink{
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0% 100%;
@@ -78,7 +75,6 @@ main{
     @apply lg:w-6/12 lg:p-0 p-7;
 }
 .imagen{
-    z-index: 5;
     transform: scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg);
 }
 .contenedortotal2{
