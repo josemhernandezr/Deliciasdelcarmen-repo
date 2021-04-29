@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="icon" type="image/ico" href="../img/logos/logo.ico"/> 
+    <title>Delicias del Carmen | Los mejores chicharrones de Honduras | Servicios</title>
+</head>
+<body>
+    <header>
+        <div class="antialiased shadow-lg w-full fixed z-50">
+            <div class="w-full text-gray-700 bg-white">
+                <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                    <div class="flex flex-row items-center justify-between p-4">
+                        <a href="../index.html" class="flex text-xl items-center font-bold focus:outline-none focus:ring text-red-700 hover:text-yellow-500">
+                            <img class="pr-3" src="../img/logos/logo.png" alt="imagen logo delicias del carmen" title="Logo delicias del carmen"/>
+                            Delicias del Carmen
+                        </a>
+                        <button class="bg-red-700 p-2 text-white rounded-lg md:hidden focus:outline-none focus:ring transition-all duration-700" @click="open = !open" aria-label="Abrir y cerrar menu">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 transition-all duration-700">
+                                <path x-show="!open" fill-rule="evenodd" class="transition-all duration-700" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd" class="transition-all duration-700" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                        <a class="navlink" href="../index.html" title="Página de inicio">Inicio</a>
+                        <a class="navlink" href="./sobrenosotros.html" title="Sobre nosotros">Sobre nosotros</a>
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                            <button @click="open = !open" class="submenuboton" aria-label="submenu">
+                                <span>Productos</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
+                                <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <a class="submenulink" href="./productos.html#productos_chicharrones" title="chicharrones">
+                                        <div class="submenulinkicono">
+                                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="font-semibold">Chicharrones</p>
+                                            <p class="text-sm">Los mejores chicharrones de Honduras.</p>
+                                        </div>
+                                        </a>
+                                        <a class="submenulink" href="./productos.html#productos_tamales" title="tamales">
+                                        <div class="submenulinkicono">
+                                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="font-semibold">Tamales</p>
+                                            <p class="text-sm">Los más deliciosos tamales, ahora de larga duración.</p>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="navlink navactive" href="./servicios.html" title="Servicios">Servicios</a>    
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div> 
+            <div class="serviciocontenedor" id="restaurante"> 
+                <div class="flex items-center content-center">
+                    <div class="serviciodescrip">
+                        <svg class="inline-block h-48 w-48 mt-14 text-yellow-400" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="8" y1="21" x2="16" y2="21" />  <line x1="12" y1="15" x2="12" y2="21" />  <path d="M16 4l1 6a5 5 0 0 1 -10 0l1 -6z" />  <path d="M7 10a4 4 0 0 1 5 0a4 4 0 0 0 5 0" /></svg>
+                        <div class="px-6 py-4 m-auto">
+                            <div class="space-y-5 text-black">
+                                <div><h2>Restaurante</h2></div>
+                                <p>
+                                    Disfruta de nuestra comida buffet todos los dias del año. Con todas las medidas de bioseguridad, en un ambiente tranquilo, ideal para toda la familia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="servicioimagenes">
+                    <div><img src="../img/servicios/restaurante/restaurante1.jpg"></div>
+                    <div><img src="../img/servicios/restaurante/restaurante2.jpg"></div>
+                    <div><img src="../img/servicios/restaurante/restaurante3.jpg"></div>
+                    <div><img src="../img/servicios/restaurante/restaurante4.jpg"></div>
+                </div>
+            </div>     
+
+            <div class="serviciocontenedor" > 
+                <div class="servicioimagenes">
+                    <div><img src="../img/servicios/eventos/eventos1.jpg"></div>
+                    <div><img src="../img/servicios/eventos/eventos2.jpg"></div>
+                    <div><img src="../img/servicios/eventos/eventos3.jpg"></div>
+                    <div><img src="../img/servicios/eventos/eventos4.jpg"></div>
+                </div>
+                <div class="flex items-center content-center order-first lg:order-last">
+                    <div class="serviciodescrip">
+                        <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="5" r="2" />  <path d="M5 22v-5l-1-1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5" />  <circle cx="17" cy="5" r="2" />  <path d="M15 22v-4h-2l2 -6a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1l2 6h-2v4" /></svg><path d="M16 4l1 6a5 5 0 0 1 -10 0l1 -6z" />  <path d="M7 10a4 4 0 0 1 5 0a4 4 0 0 0 5 0" /></svg>
+                        <div class="px-6 py-4 m-auto">
+                            <div class="space-y-5 text-black">
+                                <div><h2>Eventos</h2></div>
+                                <p>
+                                    Ponemos a su disposición nuestro servicio de salones para eventos y servicio de catering con la calidad que nos caracteriza. Ofrecemos el mejor servicio para Bodas, Reuniones, XV Años y muchos más eventos sociales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            
+            <div class="serviciocontenedor" id="supermercado"> 
+                <div class="flex items-center content-center">
+                    <div class="serviciodescrip">
+                        <svg class=" inline-block h-24 w-24 text-yellow-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg><path d="M16 4l1 6a5 5 0 0 1 -10 0l1 -6z" />  <path d="M7 10a4 4 0 0 1 5 0a4 4 0 0 0 5 0" /></svg>
+                        <div class="px-6 py-4 m-auto">
+                            <div class="space-y-5 text-black">
+                                <div><h2>Supermercado</h2></div>
+                                <p>
+                                    Todo en un solo lugar, Chicharrones, tamales, lácteos, panadería e insumos básicos. Contamos con las respectivas medidas de bioseguridad para ofrecerle la mejor experiencia en todo momento dentro de nuestras instalaciones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="servicioimagenes">
+                    <div><img src="../img/servicios/supermercado/supermercado1.jpg"></div>
+                    <div><img src="../img/servicios/supermercado/supermercado2.jpg"></div>
+                    <div><img src="../img/servicios/supermercado/supermercado3.jpg"></div>
+                    <div><img src="../img/servicios/supermercado/supermercado4.jpg"></div>
+                </div>
+            </div>
+
+            <div class="serviciocontenedor" > 
+                <div class="servicioimagenes">
+                    <div><img src="../img/servicios/autoservicio/autoservicio1.jpg"></div>
+                    <div><img src="../img/servicios/autoservicio/autoservicio2.jpg"></div>
+                    <div><img src="../img/servicios/autoservicio/autoservicio3.jpg"></div>
+                    <div><img src="../img/servicios/autoservicio/autoservicio4.jpg"></div>
+                </div>
+                <div class="flex items-center content-center order-first lg:order-last">
+                    <div class="serviciodescrip">
+                        <svg class="inline-block h-24 w-24 text-red-600"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="17" r="2" />  <circle cx="17" cy="17" r="2" />  <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" /></svg>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg><path d="M16 4l1 6a5 5 0 0 1 -10 0l1 -6z" />  <path d="M7 10a4 4 0 0 1 5 0a4 4 0 0 0 5 0" /></svg>
+                        <div class="px-6 py-4 m-auto">
+                            <div class="space-y-5 text-black">
+                                <div><h2>Autoservicio</h2></div>
+                                <p>
+                                    Todos nuestros productos disponible en nuestros dos autoservicios, sin bajarte de tu vehículo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-end justify-end fixed bottom-0 right-0 mb-6 mr-4 z-10">
+            <div>
+                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="content-whatsapp animate-pulse">
+                    <svg class="icono-whatsapp" height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path  fill="currentColor" d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 
+                        256-256-114.636719-256-256-256zm5.425781 405.050781c-.003906 0 .003907 0 0 0h-.0625c-25.644531-.011719-50.84375-6.441406-73.222656-18.644531l-81.222656 21.300781 
+                        21.738281-79.375c-13.410156-23.226562-20.464844-49.578125-20.453125-76.574219.035156-84.453124 68.769531-153.160156 153.222656-153.160156 40.984375.015625 79.457031 15.96875 
+                        108.382813 44.917969 28.929687 28.953125 44.851562 67.4375 44.835937 108.363281-.035156 84.457032-68.777343 153.171875-153.21875 153.171875zm0 0"/>
+                        <path fill="currentColor" d="m261.476562 124.46875c-70.246093 0-127.375 57.105469-127.40625 127.300781-.007812 24.054688 6.726563 47.480469 19.472657 67.75l3.027343 4.816407-12.867187 
+                        46.980468 48.199219-12.640625 4.652344 2.757813c19.550781 11.601562 41.964843 17.738281 64.816406 17.746094h.050781c70.191406 0 127.320313-57.109376 
+                        127.351563-127.308594.011718-34.019532-13.222657-66.003906-37.265626-90.066406-24.042968-24.0625-56.019531-37.324219-90.03125-37.335938zm74.90625 182.035156c-3.191406 8.9375-18.484374 
+                        17.097656-25.839843 18.199219-6.597657.984375-14.941407 1.394531-24.113281-1.515625-5.5625-1.765625-12.691407-4.121094-21.828126-8.0625-38.402343-16.578125-63.484374-55.234375-65.398437-57.789062-1.914063-2.554688-15.632813-20.753907-15.632813-39.59375 0-18.835938 9.890626-28.097657 
+                        13.398438-31.925782 3.511719-3.832031 7.660156-4.789062 10.210938-4.789062 2.550781 0 5.105468.023437 7.335937.132812 2.351563.117188 5.507813-.894531 8.613281 6.570313 3.191406 7.664062 10.847656 26.5 11.804688 28.414062.957031 1.917969 1.59375 
+                        4.152344.320312 6.707031-1.277344 2.554688-5.519531 8.066407-9.570312 13.089844-1.699219 2.105469-3.914063 3.980469-1.679688 7.8125 2.230469 3.828125 9.917969 16.363282 21.296875 26.511719 14.625 13.039063 26.960938 17.078125 30.789063 18.996094 3.824218 1.914062 6.058594 1.59375 
+                        8.292968-.957031 2.230469-2.554688 9.570313-11.175782 12.121094-15.007813 2.550782-3.832031 5.105469-3.191406 8.613282-1.914063 3.511718 1.273438 22.332031 10.535157 26.160156 12.449219 3.828125 1.917969 6.378906 2.875 7.335937 4.472657.960938 1.597656.960938 9.257812-2.230469 18.199218zm0 0"/></svg>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer bg-white">
+        <div class="footer2">
+            <div class="px-10 py-3 md:p-5 w-full md:w-4/12">
+                <div class="w-full text-5xl text-red-600 font-bold">
+                  Delicias del Carmen
+                </div>
+                <div class="w-full text-2xl text-yellow-500 font-bold">
+                  48 años de tradición
+                </div>
+            </div>
+            <div class="px-10 py-2 md:p-5 md:pl-20 w-full md:w-5/12">
+                <div class="text-x uppercase text-red-600 font-medium mb-6 ">
+                    Contacto
+                </div>
+                <a href="tel:+504 9948-1931" title="Numero de telefono" class="linksfooter">
+                  +504 9948-1931  
+                </a>
+                <a href="tel:+504 2784-1373" title="Numero de telefono" class="linksfooter">
+                  +504 2784-1373 
+                </a>
+                <a href="mailto:ventas@deliciasdelcarmenhn.com" target="_blank" title="Dirección de correo electrónico" class="linksfooter">
+                  ventas@deliciasdelcarmenhn.com
+                </a>
+            </div>
+            <div class="px-10 py-2 md:p-5 w-full md:w-3/12">
+                <div class="text-x uppercase text-red-600 font-medium mb-6">
+                  Más sobre nosotros
+                </div>
+                <a href="#" class="linksfooter">
+                  Cuna de los más ricos chicharrones que se producen en Honduras.
+                </a>
+            </div>
+        </div>
+        <div class="pt-2">
+          <div class="flex pb-5 px-3 m-auto pt-5 border-t border-yellow-500 text-gray-800 text-sm flex-col md:flex-row max-w-6xl text-center">
+              <div class="mt-2">
+                  © Copyright 2021 Delicias Del Carmen.
+              </div>
+    
+              <div class="md:flex-auto md:flex-row-reverse flex-row flex mx-auto md:mr-28 p-3 md:p-0">
+                  <a href="https://www.instagram.com/deliciasdelcarmenhn/" target="_blank" title="Facebook Delicias del Carmen" class="iconfooter">
+                    <svg class="sv"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+                  </a>
+                  <a href="https://www.facebook.com/Delicias-Del-Carmen-177114876181970" target="_blank" title="Instagram Delicias del Carmen" class="iconfooter">
+                    <svg class="sv"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                  </a>
+              </div>
+          </div>
+      </div>
+    </footer>
+</body>
+</html>

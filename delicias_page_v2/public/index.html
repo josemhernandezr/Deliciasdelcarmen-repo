@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/ico" href="./img/logos/logo.ico"/> 
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <title>Delicias del Carmen | Los mejores chicharrones de Honduras</title>
+</head>
+<body>
+    <header>
+        <div class="antialiased shadow-lg w-full fixed z-50 headernav">
+            <div class="w-full text-gray-700 bg-white">
+                <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                    <div class="flex flex-row items-center justify-between p-2">
+                        <a href="#" class="flex text-lg items-center font-semibold focus:outline-none focus:ring text-red-700 hover:text-yellow-500">
+                            <img class="w-12 pr-3 my-1" src="./img/logos/logo.png" alt="imagen logo delicias del carmen" title="Logo delicias del carmen"/>
+                            Delicias del Carmen
+                        </a>
+                        <button class="bg-red-700 p-2 text-white rounded-lg md:hidden focus:outline-none focus:ring" @click="open = !open" aria-label="Abrir y cerrar menu">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                        <a class="navlink navactive" href="#" title="Página de inicio">Inicio</a>
+                        <a class="navlink" href="./pages/sobrenosotros.html" title="Sobre nosotros">Sobre nosotros</a>
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                            <button class="submenuboton" aria-label="submenu">
+                                <a title="Productos" href="./pages/productos.html">Productos</a>
+                                <svg @click="open = !open" fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
+                                <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <a class="submenulink" href="./pages/productos.html" title="chicharrones">
+                                            <div class="submenulinkicono">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Productos</p>
+                                                <p class="text-sm">Todos nuestros productos.</p>
+                                            </div>
+                                        </a>
+                                        <a class="submenulink" href="./pages/productos.html#productos_chicharrones" title="chicharrones">
+                                            <div class="submenulinkicono">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Chicharrones</p>
+                                                <p class="text-sm">Los mejores chicharrones de Honduras.</p>
+                                            </div>
+                                        </a>
+                                        <a class="submenulink" href="./pages/productos.html#productos_tamales" title="tamales">
+                                            <div class="submenulinkicono">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Tamales</p>
+                                                <p class="text-sm">Los más deliciosos tamales, ahora de larga duración.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="navlink" href="./pages/servicios.html" title="Servicios">Servicios</a>    
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="product-content-card">
+                    <div class="product-card">
+                        <div class="w-full p-5 lg:p-0 lg:w-1/2">
+                            <div class="product-card-img" style="background-image:url(./img/Productos/chicharrones/carne.png)"></div>
+                        </div>
+                        <div class="product-card-info mx-auto">
+                            <h2 class="product-card-h2">Chicharrón de <span class="text-red-800">Carne</span></h2>
+                            <p class="product-card-p">Los chicharrones clásicos de carne magra que se preparan marinando la carne de diferentes formas: chicharrones Mexicana, para los intrépidos, marinados en especias como comino y pimienta; chicharrones picantes, con bastante chile; y chicharrones Barbacoa, marinados en salsa BBQ.</p>
+                            <div class="mt-8">
+                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="product-card-btn">Ordena ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>                   
+              </div>
+              <div class="swiper-slide">
+                <div class="product-content-card">
+                    <div class="product-card flex flex-col lg:flex-row">
+                        <div class="product-card-info order-last mx-auto lg:order-first">
+                            <h2 class="product-card-h2">Tamal de <span class="text-red-800">Cambray</span></h2>
+                            <p class="product-card-p">Contienen pasas y almendras, y su recado es dulce. Los "tamalitos" de Cambray pueden ser tradicionalmente envueltos en hojas de maiz, y pueden llevar carne de res molida o carne de pollo.</p>
+                            <div class="mt-8">
+                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="product-card-btn">Ordena ahora</a>
+                            </div>
+                        </div>
+                        <div class="w-full p-5 lg:p-0 lg:w-1/2">
+                            <div class="product-card-img" style="background-image:url(./img/Productos/tamales/cambray.png)"></div>
+                        </div>                    
+                    </div>
+                </div> 
+              </div>
+              <div class="swiper-slide">
+                <div class="product-content-card">
+                    <div class="product-card flex flex-col lg:flex-row">
+                        <div class="product-card-info order-last mx-auto lg:order-first">
+                            <h2 class="product-card-h2">Chicharrón de <span class="text-red-800">Corroncha</span></h2>
+                            <p class="product-card-p">Los tradicionales chicharrones de corroncha, perfectamente crujientes, listos para disfrutar con limón y tu encurtido favotito.</p>
+                            <div class="mt-8">
+                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="product-card-btn">Ordena ahora</a>
+                            </div>
+                        </div>
+                        <div class="w-full p-5 lg:p-0 lg:w-1/2">
+                            <div class="product-card-img" style="background-image:url(./img/Productos/chicharrones/corroncha.png)"></div>
+                        </div>                    
+                    </div>
+                </div> 
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="./js/carousel.js"></script>
+
+        <div class="contenedortotal1">
+            <div class="container m-auto px-6">
+                <div class="contenedorinfo">
+                    <div class="subcontenedorinfo">
+                        <h1 class="tituloh1">De nuestra cocina a tu paladar</h1>
+                        <p class="parrafoinfo text-white">Desde 1973 hemos formado parte de la mesa de los hondureños, ofreciendo nuestra amplia variedad de productos exquisitos con la calidad que nos caracteriza. </p>
+                        <div class="py-5">
+                            <a href="./pages/sobrenosotros.html" class="botonesinfo mr-3">Más sobre nosotros</a>
+                        </div>
+                    </div>
+                    <div class="contenedorimg">
+                            <img src="./img/informativos/inicio_fundadora.jpg"
+                        alt="Fundadora" class="imagen rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-3 mt-8">
+            <div class="grid xm:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 max-w-8xl m-auto">
+                
+                <div class="card">
+                    <div class="icono">
+                        <svg class="material-icons" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  
+                            <path d="M7 12l5 5l10 -10" /> <path d="M2 12l5 5m5 -5l5 -5" />
+                        </svg>
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Productos de Calidad</div>
+                        <p class="parrafo">Todos nuestros productos son elaborados con estrictas normas de calidad</p>
+                    </div>
+                </div>
+               
+                <div class="card">
+                    <div class="icono">
+                        <svg class="material-icons"  xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g>
+                            <path fill="currentColor" d="M16,7.08c0,1.77-0.84,3.25-2,3.82V21h-2V10.9c-1.16-0.57-2-2.05-2-3.82C10.01,4.83,11.35,3,13,3C14.66,3,16,4.83,16,7.08z M17,3v18h2v-8h2V7C21,5.24,19.76,3,17,3z 
+                            M8.28,3c-0.4,0-0.72,0.32-0.72,0.72V7H6.72V3.72C6.72,3.32,6.4,3,6,3 S5.28,3.32,5.28,3.72V7H4.44V3.72C4.44,3.32,4.12,3,3.72,3S3,3.32,3,3.72V9c0,1.1,0.9,2,2,2v10h2V11c1.1,0,2-0.9,2-2V3.72 C9,3.32,8.68,3,8.28,3z"/></g></svg>    
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Productos</div>
+                        <p class="parrafo">Disfruta de nuestro deliciosa comida en el buffet o pide tus chicharrones y tamales para llevar a casa</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="icono">
+                        <svg class="material-icons" id="Layer_1" enable-background="new 0 0 512.011 512.011" viewBox="0 0 512.011 512.011" xmlns="http://www.w3.org/2000/svg">
+                            <path  fill="currentColor" d="m492.009 90.636c-8.989-12.186-21.438-18.626-36-18.626-32.391 0-57.8 44.68-72.031 74.67l-60.209-27.79c-41.905-19.324-91.46-20.318-135.52 0l-60.209 27.79c-14.13-29.779-39.665-74.67-72.031-74.67-14.563 0-27.011 6.441-36 18.626-21.048 28.531-20 86.346-20 125.374 0 46.98 19.679 90.734 
+                            56.91 126.533 25.681 24.693 51.329 37.57 55.743 39.69 9.293 5.096-30.672-16.523 75.586 40.696 43.499 23.405 94.44 22.114 135.52 0 106.78-57.5 65.981-35.434 75.586-40.696 4.415-2.121 30.063-14.998 55.743-39.69 37.231-35.799 
+                            56.91-79.553 56.91-126.533.002-40.999.675-97.351-19.998-125.374zm-460 125.373c0-39.142 0-112 24-112 4.038 0 14.92 6.725 30.098 31.929 8.742 14.517 15.353 29.313 17.902 35.279v168.631c-28.021-19.552-72-60.354-72-123.839zm376 
+                            123.839v-168.631c2.549-5.965 9.16-20.762 17.902-35.279 15.178-25.204 26.061-31.929 30.098-31.929 24 0 24 72.858 24 112 0 52.365-29.755 94.413-72 123.839z"/></svg>
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Medidas de Bioseguridad</div>
+                        <p class="parrafo">Duplicamos esfuerzos para garantizar tu seguridad y que nos visites con tranquilidad</p>
+                    </div>
+                </div>
+ 
+                <div class=" card">
+                    <div class="icono">
+                        <svg class="material-icons"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>              
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Supermercado</div>
+                        <p class="parrafo">Támbien puedes disfrutar de nuestros deliciosos lácteos, panaderia y una gran variedad de productos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contenedortotal2">
+            <div class="container m-auto px-6">
+                <div class="contenedorinfo">
+                    <div class="subcontenedorinfo">
+                        <h1 class="tituloh1">Los mejores chicharrones de Honduras</h1>
+                        <p class="parrafoinfo">Sin duda, nuestro producto estrella y los más conocidos en el país. Nuestros deliciosos chicharrones acompañados de encurtido y limón, listos para llevar o comer en nuestro restaurante. Puedes disfrutar de nuestros chicharrones fritos en diferentes variedades: tradicional, con barbacoa, chile, completo y de lonja. </p>
+                        <div class="py-5">
+                            <a href="./pages/productos.html" class="botonesinfo mr-3">Más productos</a>
+                        </div>
+            
+                    </div>
+                    <div class="contenedorimg">
+                            <img src="./img/informativos/carne.png"
+                        alt="Chicharron de Carne" class="imagen rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-rows-4 md:grid-rows-2 xl:grid-rows-1 grid-flow-col mx-10 p-10">
+            <div class="submenuitem">
+                <a href="./pages/productos.html#productos_chicharrones">
+                    <img src="./img/submenu/submenu1.jpg" alt="imagen de submenu">
+                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <h2 class="text-2xl font-semibold">Chicharrones</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="submenuitem">
+                <a href="./pages/servicios.html#restaurante">
+                    <img src="./img/submenu/submenu2.jpg" alt="imagen de submenu">
+                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <h2 class="text-2xl font-semibold">Restaurante</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="submenuitem">
+                <a href="./pages/productos.html#productos_tamales">
+                    <img src="./img/submenu/submenu3.jpg" alt="imagen de submenu">
+                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <h2 class="text-2xl font-semibold">Tamales</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="submenuitem">
+                <a href="./pages/servicios.html#supermercado">
+                    <img src="./img/submenu/submenu7.jpg" alt="imagen de submenu">
+                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <h2 class="text-2xl font-semibold">Supermercado</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex items-end justify-end fixed bottom-0 right-0 mb-6 mr-4 z-10">
+            <div>
+                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="content-whatsapp animate-pulse">
+                    <svg class="icono-whatsapp" height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path  fill="currentColor" d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 
+                        256-256-114.636719-256-256-256zm5.425781 405.050781c-.003906 0 .003907 0 0 0h-.0625c-25.644531-.011719-50.84375-6.441406-73.222656-18.644531l-81.222656 21.300781 
+                        21.738281-79.375c-13.410156-23.226562-20.464844-49.578125-20.453125-76.574219.035156-84.453124 68.769531-153.160156 153.222656-153.160156 40.984375.015625 79.457031 15.96875 
+                        108.382813 44.917969 28.929687 28.953125 44.851562 67.4375 44.835937 108.363281-.035156 84.457032-68.777343 153.171875-153.21875 153.171875zm0 0"/>
+                        <path fill="currentColor" d="m261.476562 124.46875c-70.246093 0-127.375 57.105469-127.40625 127.300781-.007812 24.054688 6.726563 47.480469 19.472657 67.75l3.027343 4.816407-12.867187 
+                        46.980468 48.199219-12.640625 4.652344 2.757813c19.550781 11.601562 41.964843 17.738281 64.816406 17.746094h.050781c70.191406 0 127.320313-57.109376 
+                        127.351563-127.308594.011718-34.019532-13.222657-66.003906-37.265626-90.066406-24.042968-24.0625-56.019531-37.324219-90.03125-37.335938zm74.90625 182.035156c-3.191406 8.9375-18.484374 
+                        17.097656-25.839843 18.199219-6.597657.984375-14.941407 1.394531-24.113281-1.515625-5.5625-1.765625-12.691407-4.121094-21.828126-8.0625-38.402343-16.578125-63.484374-55.234375-65.398437-57.789062-1.914063-2.554688-15.632813-20.753907-15.632813-39.59375 0-18.835938 9.890626-28.097657 
+                        13.398438-31.925782 3.511719-3.832031 7.660156-4.789062 10.210938-4.789062 2.550781 0 5.105468.023437 7.335937.132812 2.351563.117188 5.507813-.894531 8.613281 6.570313 3.191406 7.664062 10.847656 26.5 11.804688 28.414062.957031 1.917969 1.59375 
+                        4.152344.320312 6.707031-1.277344 2.554688-5.519531 8.066407-9.570312 13.089844-1.699219 2.105469-3.914063 3.980469-1.679688 7.8125 2.230469 3.828125 9.917969 16.363282 21.296875 26.511719 14.625 13.039063 26.960938 17.078125 30.789063 18.996094 3.824218 1.914062 6.058594 1.59375 
+                        8.292968-.957031 2.230469-2.554688 9.570313-11.175782 12.121094-15.007813 2.550782-3.832031 5.105469-3.191406 8.613282-1.914063 3.511718 1.273438 22.332031 10.535157 26.160156 12.449219 3.828125 1.917969 6.378906 2.875 7.335937 4.472657.960938 1.597656.960938 9.257812-2.230469 18.199218zm0 0"/></svg>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer bg-white">
+        <div class="footer2">
+            <div class="px-10 py-3 md:p-5 w-full md:w-3/12 lg:w-4/12">
+                <div class="w-full text-3xl lg:text-5xl text-red-600 font-bold text-center md:text-left">
+                    Delicias del Carmen
+                </div>
+                <div class="w-full text-xl lg:text-2xl text-yellow-500 font-bold text-center md:text-left">
+                  48 años de tradición
+                </div>
+            </div>
+            <div class="px-10 py-2 md:p-5 md:pl-8 lg:pl-16 w-full md:w-5/12 lg:w-5/12">
+                <h2 class="text-x text-center md:text-left uppercase text-red-600 font-medium mb-6">
+                    Contacto
+                </h2>
+                <a href="tel:+504 9948-1931 pr-1" title="Numero de telefono" class="linksfooter">
+                    <span class="material-icons">phone_iphone</span>
+                    +504 9948-1931  
+                </a>
+                <a href="tel:+504 2784-1373 pr-1" title="Numero de telefono" class="linksfooter">
+                    <span class="material-icons">phone</span>
+                    +504 2784-1373 
+                </a>
+                <a href="mailto:ventas@deliciasdelcarmenhn.com" target="_blank" title="Dirección de correo electrónico" class="linksfooter">
+                    <span class="material-icons pr-1">email</span>
+                    ventas@deliciasdelcarmenhn.com
+                </a>
+            </div>
+            <div class="px-10 py-2 md:p-5 w-full md:w-4/12 lg:w-3/12">
+                <h2 class="text-x text-center md:text-left uppercase text-red-600 font-medium mb-6">
+                    Más sobre nosotros
+                </h2>
+                <div class="my-3 flex items-center justify-center md:justify-start text-gray-700 text-sm font-medium overflow-hidden px-2"> Cuna de los más ricos chicharrones que se producen en Honduras. </div>
+                <div class="w-100 flex justify-center md:justify-start">
+                    <a href="https://goo.gl/maps/U7sRWaASwPVyjYaKA" target="_blank" title="Dirección Delicias del Carmen Honduras" class="botonesinfo">
+                        <div class="flex items-center">
+                            <span class="material-icons">location_on</span>
+                            <span class="my-auto">¿Cómo llegar?</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pt-2">
+          <div class="flex pb-5 px-3 m-auto pt-5 border-t border-yellow-500 text-gray-800 text-sm flex-col md:flex-row max-w-6xl text-center">
+              <div class="mt-2">
+                  © Copyright 2021 Delicias Del Carmen.
+              </div>
+    
+              <div class="md:flex-auto md:flex-row-reverse flex-row flex mx-auto md:mr-28 p-3 md:p-0">
+                  <a href="https://www.instagram.com/deliciasdelcarmenhn/" target="_blank" title="Facebook Delicias del Carmen" class="iconfooter">
+                    <svg class="sv"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+                  </a>
+                  <a href="https://www.facebook.com/Delicias-Del-Carmen-177114876181970" target="_blank" title="Instagram Delicias del Carmen" class="iconfooter">
+                    <svg class="sv"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                  </a>
+              </div>
+          </div>
+      </div>
+    </footer>
+</body>
+</html>
