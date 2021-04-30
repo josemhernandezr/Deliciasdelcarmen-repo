@@ -51,28 +51,18 @@ main{
 .submenuboton{
     @apply flex flex-row justify-center text-gray-900 items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 border-2 border-transparent hover:text-red-700 focus:text-red-700 hover:border-red-700 focus:border-red-700 focus:outline-none focus:ring;
 }
+.submenubotonactive{
+    @apply flex flex-row justify-center items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 border-2 text-red-700 border-red-700 focus:outline-none focus:ring;
+}
 .submenulink{
     @apply flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-red-200 focus:bg-red-200 focus:outline-none focus:ring;
 }
 .submenulinkicono{
     @apply bg-red-600 text-white rounded-lg p-3;
 }
-/*--------------- MISION Y VISION --------------------------*/
-.mvcard{
-    @apply mx-auto p-5 sm:p-10 text-center text-white;
-}
-.mvcardcont{
-    @apply h-full py-16 max-w-sm rounded overflow-hidden shadow-lg  bg-yellow-500;
-}
-.mvcardtitle{
-    @apply font-bold text-xl mb-2;
-}
-.mvcardtext{
-    @apply text-base;
-}
 /*--------- DESC. INICIAL, CHICHARRONES, COMENTARIOS-----------*/
 .contenedortotal{
-    @apply  flex text-center py-16;
+    @apply  flex text-center;
 }
 .contenedorimg{
     @apply lg:w-5/12;
@@ -81,17 +71,17 @@ main{
     @apply flex flex-col lg:flex-row justify-between items-center;
 }
 .subcontenedorinfo{
-    @apply lg:w-6/12 lg:p-0 p-7 mx-7;
+    @apply lg:w-7/12 lg:p-0 p-7 mx-7;
 }
 .botonesinfo{
     @apply text-white rounded-full py-2 px-5 text-base border-yellow-400 bg-yellow-400 hover:bg-white hover:text-yellow-400 inline-block border transition-all;
 }
 .parrafoinfo{
-    @apply text-sm lg:text-lg text-gray-600 text-center px-5 mx-2;
+    @apply text-sm lg:text-lg text-gray-600 text-center px-5 mx-0 md:px-10 md:mx-20;
 }
 /*-------------- SERVICIOS Y MAPA -----------------------*/
 .card {
-    @apply w-full h-full text-center items-center p-4;
+    @apply w-full h-full text-center items-center px-4;
 }
 .icono{
     @apply w-28 h-28 box-border border-4 inline-block mb-4 p-4 rounded-xl transform rotate-45 border-yellow-300 cursor-text;
@@ -103,7 +93,7 @@ main{
     @apply text-red-700 transform -rotate-45;
 }
 .infoservices{
-    @apply px-10 py-6 mb-10 text-center;
+    @apply px-10 py-6 mb-5 text-center;
 }
 .subtitulo{
     @apply font-bold text-xl mb-4;
@@ -202,7 +192,7 @@ main{
 .swiper-container {
     width: 100%;
     height: calc(100vh - 65px);
-  }
+}
   .swiper-slide {
     text-align: center;
     font-size: 18px;

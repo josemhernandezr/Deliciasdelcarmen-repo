@@ -6,137 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="icon" type="image/ico" href="../img/logos/logo.ico"/> 
     <title>Delicias del Carmen | Los mejores chicharrones de Honduras | Sobre Nosotros</title>
 </head>
 <body>
     <header>
-        <div class="antialiased shadow-lg w-full fixed z-50">
+        <div class="antialiased shadow-lg w-full fixed z-50 headernav">
             <div class="w-full text-gray-700 bg-white">
                 <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-                    <div class="flex flex-row items-center justify-between p-4">
-                        <a href="../index.html" class="flex text-xl items-center font-bold focus:outline-none focus:ring text-red-700 hover:text-yellow-500">
-                            <img class="pr-3" src="../img/logos/logo.png" alt="imagen logo delicias del carmen" title="Logo delicias del carmen"/>
+                    <div class="flex flex-row items-center justify-between p-2">
+                        <a href="../index.html" class="flex text-lg items-center font-semibold focus:outline-none focus:ring text-red-700 hover:text-yellow-500">
+                            <img class="w-12 pr-3 my-1" src="../img/logos/logo.png" alt="imagen logo delicias del carmen" title="Logo delicias del carmen"/>
                             Delicias del Carmen
                         </a>
-                        <button class="bg-red-700 p-2 text-white rounded-lg md:hidden focus:outline-none focus:ring transition-all duration-700" @click="open = !open" aria-label="Abrir y cerrar menu">
-                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 transition-all duration-700">
-                                <path x-show="!open" fill-rule="evenodd" class="transition-all duration-700" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                                <path x-show="open" fill-rule="evenodd" class="transition-all duration-700" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        <button class="bg-red-700 p-2 text-white rounded-lg md:hidden focus:outline-none focus:ring" @click="open = !open" aria-label="Abrir y cerrar menu">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                             </svg>
                         </button>
                     </div>
                     <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                        <a class="navlink" href="../index.html">Inicio</a>
-                        <a class="navlink navactive" href="#" title="Sobre Nosotros">Sobre nosotros</a>
+                        <a class="navlink" href="../index.html" title="Página de inicio">Inicio</a>
+                        <a class="navlink navactive" href="../pages/sobrenosotros.html" title="Sobre nosotros">Sobre nosotros</a>
                         <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                            <button @click="open = !open" class="submenuboton" aria-label="submenu">
-                                <span>Productos</span>
-                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <button class="submenuboton" aria-label="submenu">
+                                <a title="Todos los Productos" href="../pages/productos.html">Productos</a>
+                                <svg @click="open = !open" fill="currentColor" title="Abrir submenú" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                             </button>
                             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
                                 <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <a class="submenulink" href="./productos.html#productos_chicharrones">
-                                        <div class="submenulinkicono">
-                                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <p class="font-semibold">Chicharrones</p>
-                                            <p class="text-sm">Los mejores chicharrones de Honduras.</p>
-                                        </div>
+                                        <a class="submenulink" href="../pages/productos.html" title="Todos los productos">
+                                            <div class="submenulinkicono">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Productos</p>
+                                                <p class="text-sm">Todos nuestros productos.</p>
+                                            </div>
                                         </a>
-                                        <a class="submenulink" href="./productos.html#productos_tamales">
-                                        <div class="submenulinkicono">
-                                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <p class="font-semibold">Tamales</p>
-                                            <p class="text-sm">Los más deliciosos tamales, ahora de larga duración.</p>
-                                        </div>
+                                        <a class="submenulink" href="../pages/productos.html#productos_chicharrones" title="chicharrones">
+                                            <div class="submenulinkicono">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Chicharrones</p>
+                                                <p class="text-sm">Los mejores chicharrones de Honduras.</p>
+                                            </div>
+                                        </a>
+                                        <a class="submenulink" href="../pages/productos.html#productos_tamales" title="tamales">
+                                            <div class="submenulinkicono">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" class="md:h-8 md:w-8 h-8 w-8">  <line x1="12" y1="2" x2="12" y2="6" />  <line x1="12" y1="18" x2="12" y2="22" />  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />  <line x1="2" y1="12" x2="6" y2="12" />  <line x1="18" y1="12" x2="22" y2="12" />  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" /></svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Tamales</p>
+                                                <p class="text-sm">Los más deliciosos tamales, ahora de larga duración.</p>
+                                            </div>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a class="navlink" href="./servicios.html">Servicios</a>    
+                        <a class="navlink" href="../pages/servicios.html" title="Servicios">Servicios</a>    
                     </nav>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <div>      
-            <div class="h-96 bg-red-800	bg-left-top bg-auto bg-repeat-x">
+        <section title="Sobre nosotros">
+            <div class="text-center pt-10">
+                <h2 class="text-center text-sm font-extrabold text-red-700 uppercase">sobre Nosotros</h2>
+                <h2 class="text-center text-3xl font-extralight text-red-700">Conoce un poco más sobre nuestra empresa</h2>
+                <div class="inline-block h-1 w-20 p-0 border-t-4 border-red-700 mb-4 md:mb-1"></div>
             </div>
-            <div class="-mt-64 ">
-                <div class="w-full text-center">
-                    <h1 class="font-bold text-5xl text-white px-3">Sobre nosotros</h1>
-                    <p class=" pt-2 text-sm tracking-widest text-white">Conóce un poco más acerca de nuestra empresa.</p>
-                </div>   
-                <div class="grid grid-cols-1 gap-2 md:grid-cols-2 text-center">
-                    
-                    <div class="mvcard">
-                        <div class="mvcardcont">
-                            <div class="space-y-10">
-                                <svg class="h-24 w-24 mx-auto"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="5.5" cy="11.5" r="4.5" />  <circle cx="18.5" cy="11.5" r="4.5" />  <line x1="5.5" y1="16" x2="18.5" y2="16" /></svg>
-                                <div class="px-6 py-4">
-                                    <div class="space-y-5">
-                                        <div class="subtitulo">Misión</div>
-                                        <p class="parrafo">
-                                            Somos una empresa familiar hondureña, dedicada a la producción y comercialización de productos nostálgicos de la más alta calidad, diferenciados con un equipo de colaboradores altamente calificados.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="contenedortotal">
+                <div class="contenedorinfo">
+                    <div class="contenedorimg">
+                            <img src="../img/informativos/sobrenosotros.png"
+                        alt="Fundadora">
                     </div>
-                    <div class="mvcard"> 
-                      <div class="mvcardcont">
-                          <div class="space-y-10">
-                            <svg class="h-24 w-24 mx-auto"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />  <polyline points="17 6 23 6 23 12" /></svg>
-                              <div class="px-6 py-4">
-                                  <div class="space-y-5">
-                                      <div class="subtitulo">Visión</div>
-                                      <p class="parrafo">
-                                        Ser una empresa líder en la producción de alimentos nostálgicos de la más alta calidad para satisfacción de nuestros clientes a nivel nacional e internacional.
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
+                    <div class="subcontenedorinfo order-last lg:order-first text-left">
+                        <h2 class="text-lg lg:text-2xl font-bold leading-tight text-red-700 px-5 mx-0 md:px-10 md:mx-20">Misión</h2>
+                        <div class="inline-block h-1 w-36 border-t-2 border-red-700 px-5 mx-0 md:px-10 md:mx-20"></div>
+                        <p class="parrafoinfo text-gray-700 mb-5 text-left">Somos una empresa familiar hondureña, dedicada a la producción y comercialización de productos nostálgicos de la más alta calidad, diferenciados con un equipo de colaboradores altamente calificados.</p>
+                        <h2 class="text-lg lg:text-2xl font-bold leading-tight text-red-700 px-5 mx-0 md:px-10 md:mx-20">Visión</h2>
+                        <div class="inline-block h-1 w-36 border-t-2 border-red-700 px-5 mx-0 md:px-10 md:mx-20"></div>
+                        <p class="parrafoinfo text-gray-700 text-left">Ser una empresa líder en la producción de alimentos nostálgicos de la más alta calidad para satisfacción de nuestros clientes a nivel nacional e internacional.</p>
                     </div>
-                   
-              </div>
+                </div>
             </div>
-        </div>
-        
-        <div class="container mx-auto">
+        </section>
+        <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2">
               <div class="h-full m-3 md:m-0">
-                <img class="w-full h-full object-cover object-top" src="../img/informativos/historia.jpg" alt="">
+                <img class="w-full h-full object-cover object-top" src="../img/informativos/historia.png" alt="imagen fundadora">
               </div>
-              <div class="flex bg-white p-10">
+              <div class="flex p-10">
                 <div class="mb-auto mt-auto max-w-lg">
-                  <h2 class="text-4xl text-yellow-500 font-bold my-1">Nuestra historia</h2>
+                  <h2 class="text-4xl text-yellow-400 font-bold my-1">Nuestra historia</h2>
                   <h3 class="text-5xl text-red-600 font-bold">Delicias del Carmen</h3>
-                  <p class="text-md font-semibold text-gray-800 pt-5">Comenzó como un proyecto visionario de Don Guillermo y Doña Carmen de Hernández desde 1974, poco a poco se fue transformando en una empresa familiar donde padres e hijos trabajan al unísono para alcanzar un objetivo común. Actualmente se dedica a la producción de alimentos nostálgicos para el mercado nacional y foráneo.</p>
+                  <p class="text-md text-gray-800 pt-5">Comenzó como un proyecto visionario de Don Guillermo y Doña Carmen de Hernández desde 1974, poco a poco se fue transformando en una empresa familiar donde padres e hijos trabajan al unísono para alcanzar un objetivo común. Actualmente se dedica a la producción de alimentos nostálgicos para el mercado nacional y foráneo.</p>
                 </div>
               </div>
             </div>
         </div>
-
-        <div class="w-full bg-gray-100 m-0">
+        <div class="absolute right-0 w-20 xl:w-40 h-40 xl:h-60 -mt-16 xl:-mt-60" style="background-image: url('../img/logos/figura1.png'); background-size: cover; background-repeat: no-repeat; background-position: right;"></div>
+        <div class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2">
               <div class="flex">
                 <div class="mb-auto mt-auto mx-3">
-                  <h2 class="text-4xl text-yellow-500 font-bold my-1 text-center md:text-right">Alianzas</h2>
-                  <h3 class="text-5xl text-blue-600 font-bold text-center md:text-right">Marca País</h3>
-                  <p class="text-md font-semibold text-blue-600 px-0 md:pl-16 py-5 text-center md:text-right"><span class="text-yellow-500">Delicias del Carmen</span> aliado estratégico de Marca País Honduras; la herramienta más poderosa que tenemos para dar a conocer lo mejor que Honduras tiene para ofrecer en materia de turismo, inversiones, exportaciones, así como la grandeza de nuestra gente.</p>
+                  <h2 class="text-4xl text-yellow-400 font-bold my-1 text-center md:text-right">Alianzas</h2>
+                  <h3 class="text-5xl font-bold text-center md:text-right text-blue-600">Marca País</h3>
+                  <p class="text-md px-0 md:pl-16 py-5 text-center md:text-right"><span class="text-red-700 text-xl font-semibold">Delicias del Carmen</span> aliado estratégico de Marca País Honduras; la herramienta más poderosa que tenemos para dar a conocer lo mejor que Honduras tiene para ofrecer en materia de turismo, inversiones, exportaciones, así como la grandeza de nuestra gente.</p>
                 </div>
               </div>
               <div class="order-first md:order-last">
-                    <img class="w-7/12 h-full mx-auto filter contrast-125" src="../img/informativos/marcapais.png" alt="">                
+                    <img class="w-full h-full object-cover object-top" src="../img/informativos/marcapais.png" alt="imagen marca pais">              
               </div>
             </div>
         </div>
@@ -160,45 +148,53 @@
         </div>
     </main>
     
-    <footer class="footer bg-white">
+    <footer class="footer bg-red-800">
         <div class="footer2">
-            <div class="px-10 py-3 md:p-5 w-full md:w-4/12">
-                <div class="w-full text-5xl text-red-600 font-bold">
-                  Delicias del Carmen
+            <div class="pl-10 py-3 w-full md:w-4/12 lg:w-4/12">
+                <div class="w-full text-5xl md:text-4xl lg:text-5xl text-white font-bold text-left ml-5 md:ml-0">
+                    Delicias del Carmen
                 </div>
-                <div class="w-full text-2xl text-yellow-500 font-bold">
+                <div class="w-full text-2xl md:text-xl lg:text-2xl text-yellow-500 font-bold text-left ml-5 md:ml-0">
                   48 años de tradición
                 </div>
             </div>
-            <div class="px-10 py-2 md:p-5 md:pl-20 w-full md:w-5/12">
-                <div class="text-x uppercase text-red-600 font-medium mb-6 ">
+            <div class="px-10 py-2 md:p-5 md:pl-8 lg:pl-16 w-full md:w-4/12 lg:w-5/12">
+                <h2 class="text-x text-center md:text-left uppercase text-yellow-500 font-bold mb-6">
                     Contacto
-                </div>
-                <a href="tel:+504 9948-1931" title="Numero de telefono" class="linksfooter">
-                  +504 9948-1931  
+                </h2>
+                <a href="tel:+504 9948-1931 pr-1" title="Numero de celular" class="linksfooter">
+                    <span class="material-icons">phone_iphone</span>
+                    +504 9948-1931  
                 </a>
-                <a href="tel:+504 2784-1373" title="Numero de telefono" class="linksfooter">
-                  +504 2784-1373 
+                <a href="tel:+504 2784-1373 pr-1" title="Numero de teléfono" class="linksfooter">
+                    <span class="material-icons">phone</span>
+                    +504 2784-1373 
                 </a>
                 <a href="mailto:ventas@deliciasdelcarmenhn.com" target="_blank" title="Dirección de correo electrónico" class="linksfooter">
-                  ventas@deliciasdelcarmenhn.com
+                    <span class="material-icons pr-1">email</span>
+                    ventas@deliciasdelcarmenhn.com
                 </a>
             </div>
-            <div class="px-10 py-2 md:p-5 w-full md:w-3/12">
-                <div class="text-x uppercase text-red-600 font-medium mb-6">
-                  Más sobre nosotros
+            <div class="px-10 py-2 md:p-5 w-full md:w-4/12 lg:w-3/12">
+                <h2 class="text-x text-center md:text-left uppercase text-yellow-500 font-bold mb-6">
+                    Más sobre nosotros
+                </h2>
+                <div class="my-3 flex items-center justify-center md:justify-start text-white text-sm font-medium overflow-hidden px-2"> Cuna de los más ricos chicharrones que se producen en Honduras. </div>
+                <div class="w-100 flex justify-center md:justify-start">
+                    <a href="https://goo.gl/maps/U7sRWaASwPVyjYaKA" target="_blank" title="Dirección Delicias del Carmen Honduras" class="botonesinfo">
+                        <div class="flex items-center">
+                            <span class="material-icons">location_on</span>
+                            <span class="my-auto font-bold">Ubicación</span>
+                        </div>
+                    </a>
                 </div>
-                <a href="#" class="linksfooter">
-                  Cuna de los más ricos chicharrones que se producen en Honduras.
-                </a>
             </div>
         </div>
         <div class="pt-2">
-          <div class="flex pb-5 px-3 m-auto pt-5 border-t border-yellow-500 text-gray-800 text-sm flex-col md:flex-row max-w-6xl text-center">
-              <div class="mt-2">
-                  © Copyright 2021 Delicias Del Carmen.
+          <div class="flex pb-5 px-3 m-auto pt-5 border-t border-white text-white text-sm flex-col md:flex-row max-w-6xl text-center">
+              <div class="mt-2 ml-0 md:ml-10">
+                  ©Copyright 2021 Delicias Del Carmen.
               </div>
-    
               <div class="md:flex-auto md:flex-row-reverse flex-row flex mx-auto md:mr-28 p-3 md:p-0">
                   <a href="https://www.instagram.com/deliciasdelcarmenhn/" target="_blank" title="Facebook Delicias del Carmen" class="iconfooter">
                     <svg class="sv"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
