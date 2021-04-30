@@ -36,8 +36,8 @@
                         <a class="navlink" href="./pages/sobrenosotros.html" title="Sobre nosotros">Sobre nosotros</a>
                         <div @click.away="open = false" class="relative" x-data="{ open: false }">
                             <button class="submenuboton" aria-label="submenu">
-                                <a title="Productos" href="./pages/productos.html">Productos</a>
-                                <svg @click="open = !open" fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                <a title="Todos los Productos" href="./pages/productos.html">Productos</a>
+                                <svg @click="open = !open" fill="currentColor" title="Abrir submenú" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                             </button>
                             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
                                 <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg">
@@ -84,50 +84,47 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="product-content-card">
-                    <div class="product-card">
-                        <div class="w-full p-5 lg:p-0 lg:w-1/2">
-                            <div class="product-card-img" style="background-image:url(./img/Productos/chicharrones/carne.png)"></div>
-                        </div>
-                        <div class="product-card-info mx-auto">
-                            <h2 class="product-card-h2">Chicharrón de <span class="text-red-800">Carne</span></h2>
-                            <p class="product-card-p">Los chicharrones clásicos de carne magra que se preparan marinando la carne de diferentes formas: chicharrones Mexicana, para los intrépidos, marinados en especias como comino y pimienta; chicharrones picantes, con bastante chile; y chicharrones Barbacoa, marinados en salsa BBQ.</p>
-                            <div class="mt-8">
-                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="product-card-btn">Ordena ahora</a>
-                            </div>
-                        </div>
+                <div class="flex w-full">
+                    <div class="w-2/12 lg:w-2/12" style="background-image: url('./img/logos/figura2.png'); background-size: cover; background-repeat: no-repeat; background-position: right;">
                     </div>
-                </div>                   
+                    <div class="slidercenter w-8/12 lg:w-8/12 flex flex-col justify-center overflow-hidden">
+                        <img src="./img/logos/LogoDelicias.png" alt="Logo Delicias del Carmen" style="max-width:100%" class="inline-block mx-auto">
+                        <h1 class="text-3xl text-center text-red-700 font-semibold">Cuna de los más ricos chicharrones que se producen en Honduras</h1>
+                        <h2 class="text-2xl text-center text-red-700 pb-5">Una parada obligatoria en su viaje</h2>
+                    </div>
+                    <div class="w-2/12 lg:w-2/12" style="background-image: url('./img/logos/figura1.png'); background-size: cover; background-repeat: no-repeat; background-position: left;">
+                    </div>
+                </div>             
               </div>
               <div class="swiper-slide">
                 <div class="product-content-card">
                     <div class="product-card flex flex-col lg:flex-row">
                         <div class="product-card-info order-last mx-auto lg:order-first">
-                            <h2 class="product-card-h2">Tamal de <span class="text-red-800">Cambray</span></h2>
-                            <p class="product-card-p">Contienen pasas y almendras, y su recado es dulce. Los "tamalitos" de Cambray pueden ser tradicionalmente envueltos en hojas de maiz, y pueden llevar carne de res molida o carne de pollo.</p>
+                            <h2 class="product-card-h2">Chicharrón de <span class="text-red-700">Carne</span></h2>
+                            <p class="product-card-p">Nos enorgullece ser el lugar favorito de los viajeros para detenerse en la carretera y disfrutar de los mejores chicharrones de Honduras.</p>
                             <div class="mt-8">
-                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="product-card-btn">Ordena ahora</a>
+                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="botonesinfo mr-3">Ordena ahora</a>
                             </div>
                         </div>
                         <div class="w-full p-5 lg:p-0 lg:w-1/2">
-                            <div class="product-card-img" style="background-image:url(./img/Productos/tamales/cambray.png)"></div>
+                            <div class="product-card-img" style="background-image:url(./img/informativos/slider2.png)"></div>
                         </div>                    
                     </div>
                 </div> 
               </div>
               <div class="swiper-slide">
                 <div class="product-content-card">
-                    <div class="product-card flex flex-col lg:flex-row">
-                        <div class="product-card-info order-last mx-auto lg:order-first">
-                            <h2 class="product-card-h2">Chicharrón de <span class="text-red-800">Corroncha</span></h2>
-                            <p class="product-card-p">Los tradicionales chicharrones de corroncha, perfectamente crujientes, listos para disfrutar con limón y tu encurtido favotito.</p>
+                    <div class="product-card">
+                        <div class="w-full p-5 lg:p-0 lg:w-1/2">
+                            <div class="product-card-img" style="background-image:url('./img/informativos/slider3.png')"></div>
+                        </div>
+                        <div class="product-card-info mx-auto">
+                            <h2 class="product-card-h2">Tamales <span class="text-red-800">larga duración</span></h2>
+                            <p class="product-card-p">Perfectos para degustar cualquier temporada del año, disfruta de nuestra variedad en Delicias del Carmen, calidad y sabor garantizados.</p>
                             <div class="mt-8">
-                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="product-card-btn">Ordena ahora</a>
+                                <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="botonesinfo mr-3">Ordena ahora</a>
                             </div>
                         </div>
-                        <div class="w-full p-5 lg:p-0 lg:w-1/2">
-                            <div class="product-card-img" style="background-image:url(./img/Productos/chicharrones/corroncha.png)"></div>
-                        </div>                    
                     </div>
                 </div> 
               </div>
@@ -139,27 +136,31 @@
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="./js/carousel.js"></script>
 
-        <div class="contenedortotal1">
-            <div class="container m-auto px-6">
-                <div class="contenedorinfo">
-                    <div class="subcontenedorinfo">
-                        <h1 class="tituloh1">De nuestra cocina a tu paladar</h1>
-                        <p class="parrafoinfo text-white">Desde 1973 hemos formado parte de la mesa de los hondureños, ofreciendo nuestra amplia variedad de productos exquisitos con la calidad que nos caracteriza. </p>
-                        <div class="py-5">
-                            <a href="./pages/sobrenosotros.html" class="botonesinfo mr-3">Más sobre nosotros</a>
-                        </div>
-                    </div>
-                    <div class="contenedorimg">
-                            <img src="./img/informativos/inicio_fundadora.jpg"
-                        alt="Fundadora" class="imagen rounded">
+        <div class="contenedortotal">
+            <div class="contenedorinfo">
+                <div class="contenedorimg">
+                        <img src="./img/informativos/fundadora2.png"
+                    alt="Fundadora">
+                </div>
+                <div class="subcontenedorinfo order-last lg:order-first">
+                    <h2 class="text-lg lg:text-2xl font-bold leading-tight mb-5">De nuestra cocina a tu paladar</h2>
+                    <p class="parrafoinfo text-gray-700">Desde 1973 hemos formado parte de la mesa de los hondureños, ofreciendo nuestra amplia variedad de productos exquisitos con la calidad que nos caracteriza. </p>
+                    <div class="py-5">
+                        <a href="./pages/sobrenosotros.html" class="botonesinfo mr-3">Más sobre nosotros</a>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
+        <div class="absolute left-0 w-20 lg:w-40 h-60 -mt-40" style="background-image: url('./img/logos/figura2.png'); background-size: cover; background-repeat: no-repeat; background-position: right;">
+        </div>
         <div class="px-3 mt-8">
+            <div class="text-center">
+                <h2 class="text-center text-sm font-extrabold text-red-700 uppercase">Más sobre nosotros</h2>
+                <h2 class="text-center text-3xl font-extralight text-red-700">Un servicio de calidad</h2>
+                <div class="inline-block h-1 w-20 p-0 border-t-4 border-red-700"></div>
+            </div>
             <div class="grid xm:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 max-w-8xl m-auto">
-                
                 <div class="card">
                     <div class="icono">
                         <svg class="material-icons" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  
@@ -179,7 +180,7 @@
                             M8.28,3c-0.4,0-0.72,0.32-0.72,0.72V7H6.72V3.72C6.72,3.32,6.4,3,6,3 S5.28,3.32,5.28,3.72V7H4.44V3.72C4.44,3.32,4.12,3,3.72,3S3,3.32,3,3.72V9c0,1.1,0.9,2,2,2v10h2V11c1.1,0,2-0.9,2-2V3.72 C9,3.32,8.68,3,8.28,3z"/></g></svg>    
                     </div>
                     <div class="infoservices">
-                        <div class="subtitulo">Productos</div>
+                        <div class="subtitulo">Restaurante</div>
                         <p class="parrafo">Disfruta de nuestro deliciosa comida en el buffet o pide tus chicharrones y tamales para llevar a casa</p>
                     </div>
                 </div>
@@ -211,62 +212,110 @@
                 </div>
             </div>
         </div>
-        
-        <div class="contenedortotal2">
-            <div class="container m-auto px-6">
-                <div class="contenedorinfo">
-                    <div class="subcontenedorinfo">
-                        <h1 class="tituloh1">Los mejores chicharrones de Honduras</h1>
-                        <p class="parrafoinfo">Sin duda, nuestro producto estrella y los más conocidos en el país. Nuestros deliciosos chicharrones acompañados de encurtido y limón, listos para llevar o comer en nuestro restaurante. Puedes disfrutar de nuestros chicharrones fritos en diferentes variedades: tradicional, con barbacoa, chile, completo y de lonja. </p>
-                        <div class="py-5">
-                            <a href="./pages/productos.html" class="botonesinfo mr-3">Más productos</a>
-                        </div>
-            
-                    </div>
-                    <div class="contenedorimg">
-                            <img src="./img/informativos/carne.png"
-                        alt="Chicharron de Carne" class="imagen rounded">
+        <div class="absolute right-0 w-28 lg:w-40 h-60 -mt-40 lg:-mt-20" style="background-image: url('./img/logos/figura1.png'); background-size: cover; background-repeat: no-repeat; background-position: right;">
+        </div>
+        <div class="contenedortotal">
+            <div class="contenedorinfo">
+                <div class="contenedorimg">
+                    <img src="./img/informativos/chicharrones_inicio.png"
+                    alt="Chicharron de Carne">
+                </div>
+                <div class="subcontenedorinfo">
+                    <h2 class="text-lg lg:text-2xl font-bold leading-tight mb-5">Los mejores chicharrones de Honduras</h2>
+                    <p class="parrafoinfo">Los más famosos, los más ricos, y los más tradicionales de nuestro país. Nuestros chicharrones sacian tu hambre y te llenan de sabor, sabor de nuestra tierra. Puedes disfrutarlos en diferentes variedades: tradicional, con barbacoa, chile, completo y de lonja. </p>
+                    <div class="py-5">
+                        <a href="./pages/productos.html" class="botonesinfo mr-3">Más productos</a>
                     </div>
                 </div>
+                
             </div>
         </div>
-
-        <div class="grid grid-rows-4 md:grid-rows-2 xl:grid-rows-1 grid-flow-col mx-10 p-10">
+        <div class="text-center">
+            <h2 class="text-center text-sm font-extrabold text-red-700 uppercase">Más información</h2>
+            <h2 class="text-center text-2xl sm:text-3xl font-extralight text-red-700">Productos y Servcios</h2>
+            <div class="inline-block h-1 w-20 p-0 border-t-4 border-red-700"></div>
+        </div>
+        <div class="grid grid-rows-4 md:grid-rows-2 xl:grid-rows-1 grid-flow-col mx-10 p-0 md:p-10">
             <div class="submenuitem">
                 <a href="./pages/productos.html#productos_chicharrones">
-                    <img src="./img/submenu/submenu1.jpg" alt="imagen de submenu">
-                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <div class="flex flex-col justify-center items-center relative h-full border-2 border-red-700 bg-red-700 text-white hover:bg-white hover:text-red-700 hover">
                     <h2 class="text-2xl font-semibold">Chicharrones</h2>
                     </div>
                 </a>
             </div>
             <div class="submenuitem">
                 <a href="./pages/servicios.html#restaurante">
-                    <img src="./img/submenu/submenu2.jpg" alt="imagen de submenu">
-                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <div class="flex flex-col justify-center items-center relative h-full border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white">
                     <h2 class="text-2xl font-semibold">Restaurante</h2>
                     </div>
                 </a>
             </div>
             <div class="submenuitem">
                 <a href="./pages/productos.html#productos_tamales">
-                    <img src="./img/submenu/submenu3.jpg" alt="imagen de submenu">
-                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <div class="flex flex-col justify-center items-center relative h-full border-2 border-red-700 bg-red-700 text-white hover:bg-white hover:text-red-700 hover">
                     <h2 class="text-2xl font-semibold">Tamales</h2>
                     </div>
                 </a>
             </div>
             <div class="submenuitem">
                 <a href="./pages/servicios.html#supermercado">
-                    <img src="./img/submenu/submenu7.jpg" alt="imagen de submenu">
-                    <div class="flex flex-col justify-center items-center relative h-full hover:bg-red-700 hover:bg-opacity-30 text-white hover:text-transparent">
+                    <div class="flex flex-col justify-center items-center relative h-full border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white">
                     <h2 class="text-2xl font-semibold">Supermercado</h2>
                     </div>
                 </a>
             </div>
         </div>
 
-        <div class="flex items-end justify-end fixed bottom-0 right-0 mb-6 mr-4 z-10">
+        <div class="px-3 mt-8">
+            <div class="text-center">
+                <h2 class="text-center text-sm font-extrabold text-red-700 uppercase">Otros Beneficios</h2>
+                <h2 class="text-center text-2xl sm:text-3xl font-extralight text-red-700">Todo en Delicias del Carmen</h2>
+                <div class="inline-block h-1 w-20 p-0 border-t-4 border-red-700"></div>
+            </div>
+            <div class="grid xm:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-1 max-w-8xl m-auto">
+                <div class="card">
+                    <div class="icono2">
+                        <img src="./img/otros/1.png" alt="Otros servicios">
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Locales Comerciales</div>
+                        <p class="parrafo">Podrás disfrutar de un café o apoyar a emprendedores locales</p>
+                    </div>
+                </div>
+               
+                <div class="card">
+                    <div class="icono2">
+                        <img src="./img/otros/2.png" alt="Otros servicios">
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Banco y ATM</div>
+                        <p class="parrafo">Realiza transacciones bancarias o retira efectivo</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="icono2">
+                        <img src="./img/otros/3.png" alt="Otros servicios">
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Autoservicio</div>
+                        <p class="parrafo">Todos nuestros productos sin bajarte de tu vehículo</p>
+                    </div>
+                </div>
+ 
+                <div class=" card">
+                    <div class="icono2">
+                        <img src="./img/otros/4.png" alt="Otros servicios">
+                    </div>
+                    <div class="infoservices">
+                        <div class="subtitulo">Farmacias</div>
+                        <p class="parrafo">La salud también es algo importante para nosotros</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-end justify-end fixed bottom-0 right-0 mb-10 mr-8 z-10">
             <div>
                 <a href="https://api.whatsapp.com/send?phone=504 99481931" target="_blank" class="content-whatsapp animate-pulse">
                     <svg class="icono-whatsapp" height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path  fill="currentColor" d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 
@@ -285,10 +334,10 @@
         </div>
     </main>
     
-    <footer class="footer bg-white">
+    <footer class="footer bg-red-800">
         <div class="footer2">
             <div class="px-10 py-3 md:p-5 w-full md:w-3/12 lg:w-4/12">
-                <div class="w-full text-3xl lg:text-5xl text-red-600 font-bold text-center md:text-left">
+                <div class="w-full text-3xl lg:text-5xl text-white font-bold text-center md:text-left">
                     Delicias del Carmen
                 </div>
                 <div class="w-full text-xl lg:text-2xl text-yellow-500 font-bold text-center md:text-left">
@@ -296,14 +345,14 @@
                 </div>
             </div>
             <div class="px-10 py-2 md:p-5 md:pl-8 lg:pl-16 w-full md:w-5/12 lg:w-5/12">
-                <h2 class="text-x text-center md:text-left uppercase text-red-600 font-medium mb-6">
+                <h2 class="text-x text-center md:text-left uppercase text-yellow-500 font-bold mb-6">
                     Contacto
                 </h2>
-                <a href="tel:+504 9948-1931 pr-1" title="Numero de telefono" class="linksfooter">
+                <a href="tel:+504 9948-1931 pr-1" title="Numero de celular" class="linksfooter">
                     <span class="material-icons">phone_iphone</span>
                     +504 9948-1931  
                 </a>
-                <a href="tel:+504 2784-1373 pr-1" title="Numero de telefono" class="linksfooter">
+                <a href="tel:+504 2784-1373 pr-1" title="Numero de teléfono" class="linksfooter">
                     <span class="material-icons">phone</span>
                     +504 2784-1373 
                 </a>
@@ -313,22 +362,22 @@
                 </a>
             </div>
             <div class="px-10 py-2 md:p-5 w-full md:w-4/12 lg:w-3/12">
-                <h2 class="text-x text-center md:text-left uppercase text-red-600 font-medium mb-6">
+                <h2 class="text-x text-center md:text-left uppercase text-yellow-500 font-bold mb-6">
                     Más sobre nosotros
                 </h2>
-                <div class="my-3 flex items-center justify-center md:justify-start text-gray-700 text-sm font-medium overflow-hidden px-2"> Cuna de los más ricos chicharrones que se producen en Honduras. </div>
+                <div class="my-3 flex items-center justify-center md:justify-start text-white text-sm font-medium overflow-hidden px-2"> Cuna de los más ricos chicharrones que se producen en Honduras. </div>
                 <div class="w-100 flex justify-center md:justify-start">
                     <a href="https://goo.gl/maps/U7sRWaASwPVyjYaKA" target="_blank" title="Dirección Delicias del Carmen Honduras" class="botonesinfo">
                         <div class="flex items-center">
                             <span class="material-icons">location_on</span>
-                            <span class="my-auto">¿Cómo llegar?</span>
+                            <span class="my-auto font-bold">Ubicación</span>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
         <div class="pt-2">
-          <div class="flex pb-5 px-3 m-auto pt-5 border-t border-yellow-500 text-gray-800 text-sm flex-col md:flex-row max-w-6xl text-center">
+          <div class="flex pb-5 px-3 m-auto pt-5 border-t border-yellow-500 text-white text-sm flex-col md:flex-row max-w-6xl text-center">
               <div class="mt-2">
                   © Copyright 2021 Delicias Del Carmen.
               </div>

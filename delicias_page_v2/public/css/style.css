@@ -586,12 +586,23 @@ video {
 }
 
 :root{
-  --main-color: #dc2626;
+  --main-color: #e21f24;
   --main-color-2:#b91c1c;
-  --second-color: #fcd34d;
+  --second-color: #f2d70d;
   --second-color-2:#fbbf24;
   --text-color-dark:#000;
   --text--color-light:#fff;
+}
+
+@font-face {
+  font-family: "Avenir";
+
+  src: url('../fonts/AvenirNormal.otf');
+}
+
+body{
+  font-family: "Avenir";
+  font-size: 1rem;
 }
 
 main{
@@ -842,22 +853,11 @@ main{
 
 /*--------- DESC. INICIAL, CHICHARRONES, COMENTARIOS-----------*/
 
-.contenedortotal1{
-  --tw-bg-opacity: 1;
-  background-color: rgba(153, 27, 27, var(--tw-bg-opacity));
+.contenedortotal{
+  display: flex;
   padding-top: 4rem;
   padding-bottom: 4rem;
   text-align: center;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-
-.tituloh1{
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  line-height: 1.25;
-  margin-bottom: 1.25rem;
 }
 
 @media (min-width: 1024px) {
@@ -867,17 +867,21 @@ main{
 }
 
 .contenedorinfo{
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
 @media (min-width: 1024px) {
   .contenedorinfo {
-    display: flex;
+    flex-direction: row;
   }
 }
 
 .subcontenedorinfo{
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
   padding: 1.75rem;
 }
 
@@ -888,24 +892,9 @@ main{
   }
 }
 
-.imagen{
-  transform: scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg);
-  z-index: 1 !important;
-}
-
-.contenedortotal2{
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  text-align: center;
-  --tw-text-opacity: 1;
-  color: rgba(153, 27, 27, var(--tw-text-opacity));
-}
-
 .botonesinfo{
   --tw-bg-opacity: 1;
-  background-color: rgba(245, 158, 11, var(--tw-bg-opacity));
+  background-color: rgba(251, 191, 36, var(--tw-bg-opacity));
 }
 
 .botonesinfo:hover {
@@ -915,7 +904,7 @@ main{
 
 .botonesinfo {
   --tw-border-opacity: 1;
-  border-color: rgba(245, 158, 11, var(--tw-border-opacity));
+  border-color: rgba(251, 191, 36, var(--tw-border-opacity));
   border-radius: 9999px;
   border-width: 1px;
   display: inline-block;
@@ -931,7 +920,7 @@ main{
 
 .botonesinfo:hover {
   --tw-text-opacity: 1;
-  color: rgba(245, 158, 11, var(--tw-text-opacity));
+  color: rgba(251, 191, 36, var(--tw-text-opacity));
 }
 
 .botonesinfo {
@@ -943,11 +932,20 @@ main{
 .parrafoinfo{
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   text-align: center;
   --tw-text-opacity: 1;
   color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .parrafoinfo {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 /*-------------- SERVICIOS Y MAPA -----------------------*/
@@ -962,7 +960,7 @@ main{
 
 .icono{
   --tw-border-opacity: 1;
-  border-color: rgba(245, 158, 11, var(--tw-border-opacity));
+  border-color: rgba(252, 211, 77, var(--tw-border-opacity));
   border-radius: 0.75rem;
   border-width: 4px;
   box-sizing: border-box;
@@ -981,6 +979,11 @@ main{
   --tw-scale-y: 1;
   transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-rotate: 45deg;
+}
+
+.icono2{
+  display: flex;
+  justify-content: center;
 }
 
 .card .icono .material-icons{
@@ -1270,14 +1273,14 @@ main{
 .submenuitem{
   border-radius: 0.125rem;
   box-sizing: border-box;
-  height: 15rem;
+  height: 12rem;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   position: relative;
-  width: 15rem;
+  width: 12rem;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -1298,6 +1301,13 @@ main{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   transition-duration: 700ms;
+}
+
+@media (min-width: 640px) {
+  .submenuitem {
+    height: 15rem;
+    width: 15rem;
+  }
 }
 
 .submenuitem a img{
@@ -1346,12 +1356,12 @@ main{
   margin-bottom: 0.75rem;
   overflow: hidden;
   --tw-text-opacity: 1;
-  color: rgba(55, 65, 81, var(--tw-text-opacity));
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .linksfooter:hover {
   --tw-text-opacity: 1;
-  color: rgba(185, 28, 28, var(--tw-text-opacity));
+  color: rgba(251, 191, 36, var(--tw-text-opacity));
 }
 
 .linksfooter {
@@ -1367,13 +1377,17 @@ main{
 .iconfooter{
   margin-left: 0.25rem;
   margin-right: 0.25rem;
-  width: 1.5rem;
+  width: 2.5rem;
 }
 
 .sv{
-  height: 1.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  height: 2.25rem;
+  padding: 0.25rem;
   --tw-text-opacity: 1;
-  color: rgba(239, 68, 68, var(--tw-text-opacity));
+  color: rgba(185, 28, 28, var(--tw-text-opacity));
 }
 
 .sv:hover {
@@ -1382,7 +1396,7 @@ main{
 }
 
 .sv {
-  width: 1.5rem;
+  width: 2.25rem;
 }
 
 /*Swiper*/

@@ -1,12 +1,20 @@
 @tailwind base;
 @tailwind components;
 :root{
-    --main-color: #dc2626;
+    --main-color: #e21f24;
     --main-color-2:#b91c1c;
-    --second-color: #fcd34d;
+    --second-color: #f2d70d;
     --second-color-2:#fbbf24;
     --text-color-dark:#000;
     --text--color-light:#fff;
+}
+@font-face {
+    font-family: "Avenir";
+    src: url('../fonts/AvenirNormal.otf');
+}
+body{
+font-family: "Avenir";
+font-size: 1rem;
 }
 main{
     padding-top: 65px;
@@ -63,41 +71,33 @@ main{
     @apply text-base;
 }
 /*--------- DESC. INICIAL, CHICHARRONES, COMENTARIOS-----------*/
-.contenedortotal1{
-    @apply  text-center py-16 bg-red-800 text-white;
-}
-.tituloh1{
-    @apply text-4xl font-bold leading-tight mb-5;
+.contenedortotal{
+    @apply  flex text-center py-16;
 }
 .contenedorimg{
     @apply lg:w-5/12;
 }
 .contenedorinfo{
-    @apply lg:flex justify-between items-center;
+    @apply flex flex-col lg:flex-row justify-between items-center;
 }
 .subcontenedorinfo{
-    @apply lg:w-6/12 lg:p-0 p-7;
-}
-.imagen{
-    transform: scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg);
-    z-index: 1 !important;
-
-}
-.contenedortotal2{
-    @apply  text-center py-16  bg-white text-red-800;
+    @apply lg:w-6/12 lg:p-0 p-7 mx-7;
 }
 .botonesinfo{
-    @apply text-white rounded-full py-2 px-5 text-base border-yellow-500 bg-yellow-500 hover:bg-white hover:text-yellow-500 inline-block border transition-all;
+    @apply text-white rounded-full py-2 px-5 text-base border-yellow-400 bg-yellow-400 hover:bg-white hover:text-yellow-400 inline-block border transition-all;
 }
 .parrafoinfo{
-    @apply text-sm text-gray-600 text-center px-5;
+    @apply text-sm lg:text-lg text-gray-600 text-center px-5 mx-2;
 }
 /*-------------- SERVICIOS Y MAPA -----------------------*/
 .card {
     @apply w-full h-full text-center items-center p-4;
 }
 .icono{
-    @apply  w-28 h-28 box-border border-4 inline-block mb-4 p-4 rounded-xl transform rotate-45 border-yellow-500 cursor-text;
+    @apply w-28 h-28 box-border border-4 inline-block mb-4 p-4 rounded-xl transform rotate-45 border-yellow-300 cursor-text;
+}
+.icono2{
+    @apply flex justify-center;
 }
 .card .icono .material-icons{
     @apply text-red-700 transform -rotate-45;
@@ -177,7 +177,7 @@ main{
 }
 /*------- FOOTER ------------*/
 .submenuitem{
-    @apply w-60 h-60 mx-auto my-3 rounded-sm overflow-hidden relative transform hover:scale-105 transition-all duration-700 box-border;
+    @apply w-48 h-48 sm:w-60 sm:h-60 mx-auto my-3 rounded-sm overflow-hidden relative transform hover:scale-105 transition-all duration-700 box-border;
 }
 .submenuitem a img{
     @apply w-full h-full object-cover object-center absolute z-0;
@@ -190,13 +190,13 @@ main{
     @apply max-w-6xl m-auto text-gray-800 flex flex-wrap;
 }
 .linksfooter{
-    @apply my-3 flex items-center justify-center md:justify-start text-gray-700 hover:text-red-700 text-sm font-medium duration-700 overflow-hidden;
+    @apply my-3 flex items-center justify-center md:justify-start text-white hover:text-yellow-400 text-sm font-medium duration-700 overflow-hidden;
 }
 .iconfooter{
-    @apply w-6 mx-1;
+    @apply w-10 mx-1;
 }
 .sv{
-    @apply h-6 w-6 text-red-500 hover:text-yellow-500;
+    @apply h-9 w-9 p-1 rounded-md bg-white text-red-700 hover:text-yellow-500;
 }
 /*Swiper*/
 .swiper-container {
